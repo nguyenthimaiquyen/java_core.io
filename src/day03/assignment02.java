@@ -5,7 +5,7 @@ package day03;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-public class BaiTapTrenLop03 {
+public class assignment02 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập 1 chuỗi: ");
@@ -25,7 +25,7 @@ public class BaiTapTrenLop03 {
             char c = str.charAt(i);
             if (Character.isLetter(c)) {
                 int count = charMap.getOrDefault(c,0) + 1;
-    //getOrDefault trả về giá trị của cặp phần tử nếu chúng tồn tại, nếu ko tồn tại trả về giá trị mặc định
+//getOrDefault trả về giá trị của cặp phần tử nếu chúng tồn tại, nếu ko tồn tại trả về giá trị mặc định default
                 charMap.put(c, count);
                 if (count > maxCount) {
                     maxCount = count;

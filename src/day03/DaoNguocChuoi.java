@@ -5,7 +5,7 @@ package day03;
 
 import java.util.Scanner;
 
-public class BaiTapTrenLop04 {
+public class DaoNguocChuoi {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a string: ");
