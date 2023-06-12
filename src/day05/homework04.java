@@ -1,48 +1,41 @@
 /*Bài 4: Nhập số liệu cho dãy số nguyên a[0], a[1],..., a[n-1]. Tìm số lớn thứ hai và vị trí
         của nó trong dãy. Chú ý trường hợp cả dãy bằng nhau thì sẽ không có số lớn thứ 2.*/
 package day05;
+import java.util.ArrayList;
 import java.util.Scanner;
 public class homework04 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Nhập n = ");
-        int n = sc.nextInt();
-        int[] a = new int[n];
-        System.out.print("Nhập các phần tử của mảng: ");
-        for (int i = 0; i < n; i++) {
-            a[i] = sc.nextInt();
-        }
-        findSecondMax(a, n);
+        int[] array = {1,8,9,7,2,3,4,8,7,6,8,9};
+        int n = array.length;
+        findSecondMax(array, n);
     }
     public static void findSecondMax(int[] a, int n) {
-        //sắp xếp mảng tăng dần
+        //tìm phần tử lớn nhất trong mảng
+        int max = a[0];
         for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (a[i] > a[j]) {
-                    int temp = a[i];
-                    a[i] = a[j];
-                    a[j] = temp;
-                }
+            if (a[i] > max) {
+                max = a[i];
             }
         }
-        //in mảng sau khi sắp xếp
-        System.out.println("Mảng sau khi sắp xếp tăng dần: ");
+        //tạo 1 arraylist và add các phần tử ngoại trừ max vào list
+        ArrayList<Integer> list = new ArrayList<Integer>();
         for (int i = 0; i < n; i++) {
-            System.out.print(a[i] + " ");
+            if (a[i] != max) {
+                list.add(a[i]);
+            }
         }
-        System.out.println();
-        //in số lớn thứ 2 và vị trí nếu có
-        if (n < 2 || (a[n-1] == a[n-2])) {
-            System.out.println("Không có số lớn thứ 2!");
-            //sai trong test case 1 2 2 3 3 => sửa lại
-        } else {
-            int secondMax = a[n-2];
-            System.out.print("Số lớn thứ 2 trong mảng là: " + a[n-2]);
-            System.out.print(" tại vị trí ");
-            for (int i = 0; i < n; i++) {
-                if (a[i] == secondMax) {
-                    System.out.print(i + " ");
-                }
+        //tìm phần tử max trong list
+        int secondMax = list.get(0);
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) > secondMax) {
+                secondMax = list.get(i);
+            }
+        }
+        //in ra chỉ số của phần tử max
+        System.out.println("Số lớn thứ 2 trong mảng ban đầu: " + secondMax);
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) == secondMax) {
+                System.out.println("Vị trí trong mảng mới: " + i);
             }
         }
     }

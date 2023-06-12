@@ -1,8 +1,6 @@
 /*Bài 8: Viết chương trình tính tích 2 ma trận các số nguyên A cấp mxn và B cấp n x k.*/
 package day05;
-
 import java.util.Scanner;
-
 public class homework08 {
     public static void main(String[] args) {
         int[][] A = { {1, 5, 7}, {6, 9, 3} };//Ma trận A có cấp 2*3

@@ -6,21 +6,21 @@ package day05;
 public class homework01 {
     public static void main(String[] args) {
         System.out.println("Danh sách các số nguyên có 7 đến 9 chữ số là số thuận nghịch: ");
-        for (int i = 10000; i <= 999999999; i++) {
+        for (int i = 1000000; i <= 999999999; i++) {
             if (laSoThuanNghich(i)) {
                 System.out.print(i + "\t");
             }
         }
         System.out.println();
         System.out.println("Danh sách các số nguyên có 7 đến 9 chữ số chỉ có chữ số 0,6,8: ");
-        for (int i = 10000; i <= 999999999; i++) {
+        for (int i = 1000000; i <= 999999999; i++) {
             if (gomCacChuSo068(i)) {
                 System.out.print(i + "\t");
             }
         }
         System.out.println();
         System.out.println("Danh sách các số nguyên có 7 đến 9 chữ số và tổng các chữ số chia hết cho 10: ");
-        for (int i = 10000; i <= 999999999; i++) {
+        for (int i = 1000000; i <= 999999999; i++) {
             if (tongChuSoChiaHetCho10(i)) {
                 System.out.print(i + "\t");
             }

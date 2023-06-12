@@ -13,11 +13,7 @@ public class homework12 {
     private static void timTong(int[][] array) {
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[0].length; j++) {
-                if (i == j) {
-                    sum += array[i][j];
-                }
-            }
+            sum += array[i][i];
         }
         System.out.println("Tổng đường chéo chính của ma trận là: " +sum);
     }

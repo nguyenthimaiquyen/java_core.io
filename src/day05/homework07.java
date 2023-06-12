@@ -15,7 +15,7 @@ public class homework07 {
         for (int i = 0; i < n; i++) {
             System.out.print("Nhập phần tử thứ " + i + ": ");
             value = sc.nextInt();
-            if (checkTrung(array, n, value)) {
+            if (checkTrung(array, value)) {
                 System.out.println("Giá trị bị trùng vui lòng nhập lại!");
                 i--;
             } else {
@@ -28,8 +28,8 @@ public class homework07 {
             System.out.print(array[i] + " ");
         }
     }
-    public static boolean checkTrung(int[] array, int size, int value) {
-        for (int i = 0; i < size; i++) {
+    public static boolean checkTrung(int[] array, int value) {
+        for (int i = 0; i < array.length; i++) {
             if (array[i] == value) {
                 return true;
             }
