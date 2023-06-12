@@ -11,16 +11,17 @@ public class pascal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập số n = ");
+        int k = 1;
         int n = sc.nextInt();
         for (int i = 0; i < n; i++) {
-            int k = 1;
-            for (int j = 0; j < n - i - 1; j++) {
+            for (int j = 0; j <= n - i; j++) {
                 System.out.print(" ");
             }
             for ( int g = 0; g <= i; g++) {
                 System.out.print(k + " ");
                 k = k * (i - g) / (g + 1);
             }
+            k++;
             System.out.println();
         }
     }
