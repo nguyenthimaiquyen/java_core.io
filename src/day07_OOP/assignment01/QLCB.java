@@ -16,9 +16,6 @@ public class QLCB {
     public QLCB() {
         danhSach = new ArrayList();
     }
-    public QLCB(ArrayList danhSach) {
-        this.danhSach = danhSach;
-    }
     //thêm cán bộ vào danh sách
     public void themCanBo(CanBo canBo) {
         this.danhSach.add(canBo);
@@ -55,14 +52,49 @@ public class QLCB {
 
             switch (luaChon) {
                 case 1:
-                    System.out.print("Nhập tên cán bộ: "); String name = sc.nextLine();
-                    System.out.print("Nhập tuổi: "); int age = sc.nextInt(); sc.nextLine();
-                    System.out.print("Nhập giới tính: "); String gender = sc.nextLine();
-                    System.out.print("Nhập địa chỉ: "); String address = sc.nextLine();
+                    String luaChon2 = "a";
+                    do {
+                        System.out.println("a. Thêm công nhân");
+                        System.out.println("b. Thêm kỹ sư");
+                        System.out.println("c. Thêm nhân viên");
+                        System.out.println("d. Nhấn bất kỳ để quay lại");
+                        luaChon2 = sc.nextLine();
 
-                    CanBo canBo = new CanBo(name, age, gender, address);
-                    ql.themCanBo(canBo);
+                        switch (luaChon2) {
+                            case "a":
+                                System.out.print("Nhập tên công nhân: "); String name1 = sc.nextLine();
+                                System.out.print("Nhập tuổi: "); int age1 = sc.nextInt(); sc.nextLine();
+                                System.out.print("Nhập giới tính: "); String gender1 = sc.nextLine();
+                                System.out.print("Nhập địa chỉ: "); String address1 = sc.nextLine();
+                                System.out.print("Nhập bậc của công nhân: "); int level1 = sc.nextInt(); sc.nextLine();
+
+                                CanBo congNhan = new CongNhan(name1, age1, gender1, address1, level1);
+                                ql.themCanBo(congNhan);
+                                break;
+                            case "b":
+                                System.out.print("Nhập tên kỹ sư: "); String name2 = sc.nextLine();
+                                System.out.print("Nhập tuổi: "); int age2 = sc.nextInt(); sc.nextLine();
+                                System.out.print("Nhập giới tính: "); String gender2 = sc.nextLine();
+                                System.out.print("Nhập địa chỉ: "); String address2 = sc.nextLine();
+                                System.out.print("Nhập ngành đào tạo của kỹ sư: "); String major2 = sc.nextLine();
+
+                                CanBo kySu = new KySu(name2, age2, gender2, address2, major2);
+                                ql.themCanBo(kySu);
+                                break;
+                            case "c":
+                                System.out.print("Nhập tên nhân viên: "); String name3 = sc.nextLine();
+                                System.out.print("Nhập tuổi: "); int age3 = sc.nextInt(); sc.nextLine();
+                                System.out.print("Nhập giới tính: "); String gender3 = sc.nextLine();
+                                System.out.print("Nhập địa chỉ: "); String address3 = sc.nextLine();
+                                System.out.print("Nhập công việc của nhân viên: "); String job3 = sc.nextLine();
+
+                                CanBo nhanVien = new NhanVien(name3, age3, gender3, address3, job3);
+                                ql.themCanBo(nhanVien);
+                                break;
+                        }
+                    } while (luaChon2.equals("a") || luaChon2.equals("b") || luaChon2.equals("c"));
                     break;
+
                 case 2:
                     System.out.print("Tên cán bộ cần tìm: "); String searchName = sc.nextLine();
                     ql.searchCanBo(searchName);
@@ -74,11 +106,7 @@ public class QLCB {
                 default:
                     System.out.println("Lựa chọn chưa chính xác hoặc thoát chương trình!");
             }
-
         } while (luaChon != 0);
 
     }
-
-
-
 }

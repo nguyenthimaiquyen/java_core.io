@@ -23,4 +23,15 @@ public class KySu extends CanBo{
     public void setMajor(String major) {
         this.major = major;
     }
+
+    @Override
+    public String toString() {
+        return "Ky su{" +
+                "name='" + super.getName() + '\'' +
+                ", age=" + super.getAge() +
+                ", gender='" + super.getGender() + '\'' +
+                ", address='" + super.getAddress() + '\'' +
+                ", major='" + major + '\'' +
+                '}';
+    }
 }

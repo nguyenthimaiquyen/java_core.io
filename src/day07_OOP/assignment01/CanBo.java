@@ -10,11 +10,13 @@
 package day07_OOP.assignment01;
 
 public class CanBo {
-    private String name;
+    protected String name;
     private int age;
     private String gender;
     private String address;
 
+    public CanBo() {
+    }
     public CanBo(String name, int age, String gender, String address) {
         this.name = name;
         this.age = age;
@@ -56,7 +58,11 @@ public class CanBo {
 
     @Override
     public String toString() {
-        return "name = '" + name + '\'' + ", age = " + age +
-                ", gender = '" + gender + '\'' + ", address = '" + address + '\'';
+        return "CanBo{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }

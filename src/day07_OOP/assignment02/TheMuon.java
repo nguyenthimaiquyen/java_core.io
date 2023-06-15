@@ -8,12 +8,8 @@
         Yêu cầu 2: Xây dựng lớp TheMuon để quản lý việc mượn trả sách của các sinh viên.
         Yêu cầu 3: Xây dựng các phương thức: Thêm, xoá theo mã phiếu mượn và hiển thị thông tin các thẻ mượn.*/
 package day07_OOP.assignment02;
-
-import day07_OOP.assignment01.CanBo;
-import day07_OOP.assignment01.QLCB;
-
+import java.util.Objects;
 import java.util.Scanner;
-
 public class TheMuon {
     private int maPhieuMuon;
     private int ngayMuon;
@@ -27,6 +23,10 @@ public class TheMuon {
         this.ngayTra = ngayTra;
         this.soHieuSach = soHieuSach;
         this.sinhVien = sinhVien;
+    }
+
+    public TheMuon(int maPhieuMuon) {
+        this.maPhieuMuon = maPhieuMuon;
     }
 
     public int getMaPhieuMuon() {
@@ -71,59 +71,22 @@ public class TheMuon {
 
     @Override
     public String toString() {
-        return "TheMuon{" +
-                "maPhieuMuon=" + maPhieuMuon +
-                ", ngayMuon=" + ngayMuon +
-                ", ngayTra=" + ngayTra +
-                ", soHieuSach='" + soHieuSach +
-                ", sinhVien=" + sinhVien +
+        return "The muon {" +
+                "ma phieu muon= " + maPhieuMuon +
+                ", ngay muon= " + ngayMuon +
+                ", ngay tra= " + ngayTra +
+                ", so hieu sach= '" + soHieuSach + '\'' +
+                ", ho ten= '" +  sinhVien.getHoTen() + '\'' +
+                ", tuoi= " + sinhVien.getTuoi() +
+                ", lop= '" + sinhVien.getLop() + '\'' +
                 '}';
     }
 
-    public void themTheMuon(TheMuon theMuon) {
-
-    }
-
-    
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        TheMuon themMuon = new TheMuon();
-        int luaChon = 0;
-
-        do {
-            System.out.println("-------------MENU-------------");
-            System.out.println("1. Thêm thẻ mượn");
-            System.out.println("2. Xóa thẻ mượn");
-            System.out.println("3. Hiển thị các thẻ mượn");
-            System.out.println("0. Thoát chương trình");
-            System.out.print("Chọn menu: ");
-            luaChon = sc.nextInt();
-
-            switch (luaChon) {
-                case 1:
-                    System.out.print("Nhập mã phiếu mượn sách: "); int maPhieu = sc.nextInt();
-                    System.out.print("Nhập ngày mượn: "); int ngayMuon = sc.nextInt();
-                    System.out.print("Nhập ngày trả: "); int ngayTra = sc.nextInt(); sc.nextLine();
-                    System.out.print("Nhập số hiệu sách: "); String sohieuSach = sc.nextLine();
-                    System.out.print("Nhập tên sinh viên: "); String ten = sc.nextLine();
-                    System.out.print("Nhập tuổi sinh viên: "); int tuoi = sc.nextInt(); sc.nextLine();
-                    System.out.print("Nhập lớp của sinh viên: "); String lop = sc.nextLine();
-
-                    SinhVien sinhVien1 = new SinhVien(ten, tuoi, lop);
-                    TheMuon theMuon1 = new TheMuon(maPhieu, ngayMuon, ngayTra, sohieuSach, sinhVien1);
-                    break;
-                case 2:
-
-
-                    break;
-                case 3:
-
-
-                    break;
-                default:
-                    System.out.println("Lựa chọn chưa chính xác hoặc thoát chương trình!");
-            }
-
-        } while (luaChon != 0);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TheMuon theMuon = (TheMuon) o;
+        return maPhieuMuon == theMuon.maPhieuMuon;
     }
 }

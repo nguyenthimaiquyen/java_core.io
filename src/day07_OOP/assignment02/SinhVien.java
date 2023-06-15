@@ -45,8 +45,8 @@ public class SinhVien {
 
     @Override
     public String toString() {
-        return "SinhVien{" +
-                "hoTen='" + hoTen + '\'' +
+        return "Sinh vien{" +
+                "ho ten='" + hoTen + '\'' +
                 ", tuoi=" + tuoi +
                 ", lop='" + lop + '\'' +
                 '}';

@@ -24,5 +24,14 @@ public class NhanVien extends CanBo {
         this.job = job;
     }
 
-
+    @Override
+    public String toString() {
+        return "Nhan vien{" +
+                "name='" + super.getName() + '\'' +
+                ", age=" + super.getAge() +
+                ", gender='" + super.getGender() + '\'' +
+                ", address='" + super.getAddress() + '\'' +
+                ", job='" + job + '\'' +
+                '}';
+    }
 }
