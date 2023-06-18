@@ -1,13 +1,16 @@
-package day08_OOP;
+package day08_OOP.entity;
 public class Nguoi {
-    private String hoTen;
-    private String diaChi;
-    private String soDienThoai;
+    protected String hoTen;
+    protected String diaChi;
+    protected String soDienThoai;
 
     public Nguoi(String hoTen, String diaChi, String soDienThoai) {
         this.hoTen = hoTen;
         this.diaChi = diaChi;
         this.soDienThoai = soDienThoai;
+    }
+
+    public Nguoi() {
     }
 
     public String getHoTen() {
@@ -42,4 +45,5 @@ public class Nguoi {
                 ", soDienThoai = '" + soDienThoai + '\'' +
                 '}';
     }
+
 }
