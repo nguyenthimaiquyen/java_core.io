@@ -1,6 +1,5 @@
 package day08_OOP.entity;
 
-import day08_OOP.statics.ChuyenNganh;
 import day08_OOP.statics.LoaiBanDoc;
 
 import java.util.Scanner;

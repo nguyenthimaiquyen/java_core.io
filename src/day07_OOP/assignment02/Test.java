@@ -1,6 +1,5 @@
 package day07_OOP.assignment02;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Test {
