@@ -190,8 +190,8 @@ public class InvoiceLogicManagement {
         }
 
         for (int i = 0; i < invoices.length; i++) {
-            for (int j = 0; j < invoices[i].getDetails().length() - 1; j++) {
-                for (int k = j + 1; k < invoices[i].getDetails().length(); k++) {
+            for (int j = 0; j < invoices[i].getDetails().length - 1; j++) {
+                for (int k = j + 1; k < invoices[i].getDetails().length; k++) {
                     if(invoices[i].getDetails()[j].getServiceInvoice() > invoices[i].getDetails()[k].getServiceInvoice()){
                         InvoiceDetail temp = invoices[i].getDetails()[j];
                         invoices[i].getDetails()[j] = invoices[i].getDetails()[k];

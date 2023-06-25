@@ -30,22 +30,15 @@ public class MenuLogicManagement {
                     payrollLogicManagement.showPayroll();
                     break;
                 case 7:
-                    payrollLogicManagement.arrangePayroll();
+                    payrollLogicManagement.sortPayroll();
                     break;
                 case 8:
                     payrollLogicManagement.calculateSalary();
                     break;
                 case 9:
                     return;
-
             }
-
-
         }
-
-
-
-
     }
 
     private int choiceFunction() {
@@ -68,7 +61,7 @@ public class MenuLogicManagement {
         System.out.println("4. In ra danh sách kiểu bài đã có");
         System.out.println("5. Lập Bảng tính công cho phóng viên");
         System.out.println("6. In Bảng tính công cho phóng viên");
-        System.out.println("7. Sắp xếp danh sách Bảng tính công theo Họ tên phóng viên hoặc theo Số lượng bài viết (giảm dần)");
+        System.out.println("7. Sắp xếp danh sách Bảng tính công");
         System.out.println("8. Lập bảng kê thu nhập của mỗi phóng viên");
         System.out.println("9. Thoát chương trình");
         System.out.print("Mời bạn chọn: ");

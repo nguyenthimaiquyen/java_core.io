@@ -118,7 +118,12 @@ public class PayrollLogicManagement {
         }
     }
 
-    public void arrangePayroll() {
+    public void sortPayroll() {
+        if (!reporterLogicManagement.reporterIsNotEmpty() || !articleTypeLogicManagement.articleTypesIsNotEmpty()) {
+            System.out.println("Không có dữ liệu phóng viên hoặc kiểu bài viết, vui lòng tạo đủ dữ liệu trước khi sắp xếp!");
+            return;
+        }
+
         System.out.println("1. Sắp xếp danh sách Bảng tính công theo Họ tên phóng viên");
         System.out.println("2. Sắp xếp danh sách Bảng tính công theo Số lượng bài viết (giảm dần)");
         System.out.print("Mời bạn chọn: ");
@@ -133,21 +138,38 @@ public class PayrollLogicManagement {
 
         switch (choiceArrangement) {
             case 1:
-                arrangebyName();
+                sortByName();
                 showPayroll();
                 break;
             case 2:
-                arrangeByDecreaseArticleNumber();
+                sortByDecreasedArticleNumber();
                 showPayroll();
                 break;
         }
     }
 
-    private void arrangeByDecreaseArticleNumber() {
+    private void sortByDecreasedArticleNumber() {
 
     }
 
-    private void arrangebyName() {
-        
+    private void sortByName() {
+        String[] reporterNames = new String[100];
+        for (int i = 0; i < payrolls.length - 1; i++) {
+            Payroll payroll = payrolls[i];
+            if (payroll == null) {
+                continue;
+            }
+            reporterNames[i] = payroll.getReporter().getName();
+        }
+
+        for (int i = 0; i < reporterNames.length - 1; i++) {
+            for (int j = 0; j < reporterNames.length - i - 1; j++) {
+                if (reporterNames[j].compareTo(reporterNames[j + 1]) > 0) {
+                    String temp = reporterNames[j];
+                    reporterNames[j] = reporterNames[j + 1];
+                    reporterNames[j + 1] = temp;
+                }
+            }
+        }
     }
 }
