@@ -9,7 +9,7 @@ import java.util.Scanner;
 /*Khai báo lớp Khách hàng (mã KH, Họ tên, Địa chỉ, Số ĐT, Loại KH)
          – với Loại khách hàng có thể là: cá nhân, đại diện đơn vị hành chính,
          đại diện đơn vị kinh doanh, mã KH là một số nguyên có 5 chữ số, tự động tăng.*/
-public class Customer implements InputInfo{
+public class Customer extends People implements InputInfo{
     private static int AUTO_IDCUSTOMER = 10000;
     private int IdCustomer;
     private String customerName;
