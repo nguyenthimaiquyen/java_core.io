@@ -92,7 +92,7 @@ public class InvoiceLogicManagement {
                                 break;
                             }
                         }
-                        if (customer != null) {
+                        if (service != null) {
                             break;
                         }
                         System.out.println("Không tồn tại ID dịch vụ vừa nhập, vui lòng nhập lại!");
@@ -172,7 +172,7 @@ public class InvoiceLogicManagement {
         }
         for (int i = 0; i < invoices.length - 1; i++) {
             for (int j = i + 1; j < invoices.length; j++) {
-                if (invoices[i].getCustomer().getNameCustomer().compareToIgnoreCase(invoices[j].getCustomer().getNameCustomer()) > 0) {
+                if (invoices[j] != null && (invoices[i].getCustomer().getNameCustomer().compareToIgnoreCase(invoices[j].getCustomer().getNameCustomer()) > 0)) {
                     Invoice temp = invoices[i];
                     invoices[i] = invoices[j];
                     invoices[j] = temp;
@@ -190,12 +190,14 @@ public class InvoiceLogicManagement {
         }
 
         for (int i = 0; i < invoices.length; i++) {
-            for (int j = 0; j < invoices[i].getDetails().length - 1; j++) {
-                for (int k = j + 1; k < invoices[i].getDetails().length; k++) {
-                    if(invoices[i].getDetails()[j].getServiceInvoice() > invoices[i].getDetails()[k].getServiceInvoice()){
-                        InvoiceDetail temp = invoices[i].getDetails()[j];
-                        invoices[i].getDetails()[j] = invoices[i].getDetails()[k];
-                        invoices[i].getDetails()[k] = temp;
+            if (invoices[i] != null) {
+                for (int j = 0; j < invoices[i].getDetails().length - 1; j++) {
+                    for (int k = j + 1; k < invoices[i].getDetails().length; k++) {
+                        if(invoices[i].getDetails()[j].getServiceInvoice() < invoices[i].getDetails()[k].getServiceInvoice()){
+                            InvoiceDetail temp = invoices[i].getDetails()[j];
+                            invoices[i].getDetails()[j] = invoices[i].getDetails()[k];
+                            invoices[i].getDetails()[k] = temp;
+                        }
                     }
                 }
             }
